@@ -338,6 +338,10 @@ showFeedback(false)
 
 },1000)
 
+if(timeLeft <= 3){
+bar.style.background = "#ff2e2e"
+}
+   
 }
 
 /* ================================
