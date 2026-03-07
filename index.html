@@ -4,109 +4,52 @@
 <head>
 <meta charset="UTF-8">
 <title>Simple Past Challenge</title>
-
-<!-- conecta o CSS -->
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="container">
+<h1>Simple Past Challenge</h1>
 
-<!-- ===================== -->
-<!-- TÍTULO DO JOGO -->
-<!-- ===================== -->
+<div id="quiz-container">
 
-<h1>🎮 Simple Past Challenge</h1>
+<div id="progressText"></div>
 
-
-<!-- ===================== -->
-<!-- TELA INICIAL -->
-<!-- ===================== -->
-
-<div id="start">
-
-<button onclick="startGame()">Start Game</button>
-
+<div class="progressBar">
+<div id="progressFill"></div>
 </div>
 
-
-<!-- ===================== -->
-<!-- ÁREA DO JOGO -->
-<!-- ===================== -->
-
-<div id="game" class="hidden">
-
-
-<!-- barra de progresso do quiz -->
-
-<div class="progress">
-
-<div id="progress-bar"></div>
-
+<div class="timerBar">
+<div id="timerFill"></div>
 </div>
-
-
-<!-- barra do tempo -->
-
-<div class="timer">
-
-<div id="timer-bar"></div>
-
-</div>
-
-
-<!-- pergunta -->
 
 <h2 id="question"></h2>
 
-
-<!-- respostas de múltipla escolha -->
-
 <div id="answers"></div>
 
+<input id="textAnswer" placeholder="Type answer">
 
-<!-- campo para perguntas de digitar -->
+<button id="submitBtn">Submit</button>
 
-<input id="text-answer" class="hidden" placeholder="Type your answer">
-
-
-<button id="submit-text" class="hidden" onclick="submitText()">
-
-Submit
-
-</button>
-
-
-<!-- feedback da resposta -->
-
-<div id="feedback" class="hidden"></div>
-
-
-<!-- pontuação -->
+<div id="feedback"></div>
 
 <p id="score">Score: 0</p>
 
-
 </div>
 
+<div id="finalScreen" class="hidden">
 
-<!-- ===================== -->
-<!-- TELA FINAL -->
-<!-- ===================== -->
+<h2>Quiz Finished!</h2>
 
-<div id="end" class="hidden">
+<p id="finalScore"></p>
 
-<h2 id="final-score"></h2>
+<p id="correctCount"></p>
+
+<p id="maxScore"></p>
 
 <button onclick="location.reload()">Play Again</button>
 
 </div>
-
-</div>
-
-<!-- conecta o javascript -->
 
 <script src="script.js"></script>
 
