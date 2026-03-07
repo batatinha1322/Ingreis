@@ -299,7 +299,7 @@ answersDiv.appendChild(btn)
 
 /* INICIA TIMER */
 
-startTimer(q.time)
+startTimer(Number(q.time))
 
 }
 
@@ -310,6 +310,7 @@ startTimer(q.time)
 
 function startTimer(time){
 
+timer = null
 clearInterval(timer)
 
 timeLeft = time
