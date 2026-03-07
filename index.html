@@ -1,54 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>Simple Past Challenge</title>
+<title>Simple Past Quiz</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Simple Past Challenge</h1>
+<h1>Simple Past Quiz</h1>
 
-<div id="quiz-container">
-
-<div id="progressText"></div>
-
-<div class="progressBar">
-<div id="progressFill"></div>
+<!-- BARRA DE PROGRESSO -->
+<div id="progress-container">
+<div id="progress-bar"></div>
 </div>
 
-<div class="timerBar">
-<div id="timerFill"></div>
-</div>
+<!-- TIMER -->
+<div id="timer">Tempo: 0</div>
 
-<h2 id="question"></h2>
+<!-- PERGUNTA -->
+<div id="question"></div>
 
+<!-- RESPOSTAS -->
 <div id="answers"></div>
 
-<input id="textAnswer" placeholder="Type answer">
-
-<button id="submitBtn">Submit</button>
-
+<!-- FEEDBACK -->
 <div id="feedback"></div>
 
-<p id="score">Score: 0</p>
+<!-- TELA FINAL -->
+<div id="final" class="hidden">
+<h2>Fim do Quiz!</h2>
 
-</div>
-
-<div id="finalScreen" class="hidden">
-
-<h2>Quiz Finished!</h2>
-
-<p id="finalScore"></p>
-
-<p id="correctCount"></p>
-
+<p id="score"></p>
+<p id="hits"></p>
 <p id="maxScore"></p>
 
-<button onclick="location.reload()">Play Again</button>
-
+<button onclick="restartQuiz()">Recomeçar</button>
 </div>
 
 <script src="script.js"></script>
