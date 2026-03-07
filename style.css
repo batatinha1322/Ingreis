@@ -1,11 +1,20 @@
+/* ===================== */
+/* CONFIGURAÇÃO GERAL */
+/* ===================== */
+
 body{
 
 font-family: Arial;
+
 background: linear-gradient(135deg,#4c6ef5,#15aabf);
+
 color:white;
+
 text-align:center;
 
 }
+
+/* container central */
 
 .container{
 
@@ -13,18 +22,32 @@ margin-top:60px;
 
 }
 
+
+/* ===================== */
+/* BOTÕES */
+/* ===================== */
+
 button{
 
 display:block;
+
 margin:10px auto;
+
 padding:15px;
+
 width:220px;
+
 font-size:18px;
+
 border:none;
+
 border-radius:10px;
+
 cursor:pointer;
 
 }
+
+/* efeito ao passar mouse */
 
 button:hover{
 
@@ -32,25 +55,30 @@ transform:scale(1.05);
 
 }
 
+
+/* esconder elementos */
+
 .hidden{
 
 display:none;
 
 }
 
-.answers button{
 
-background:white;
-color:black;
-
-}
+/* ===================== */
+/* BARRA DE PROGRESSO */
+/* ===================== */
 
 .progress{
 
 width:60%;
+
 height:20px;
+
 background:#ffffff44;
+
 margin:20px auto;
+
 border-radius:20px;
 
 }
@@ -58,27 +86,30 @@ border-radius:20px;
 #progress-bar{
 
 height:100%;
+
 width:0%;
+
 background:#00ff88;
+
 border-radius:20px;
 
 }
 
-input{
 
-padding:10px;
-font-size:18px;
-border-radius:8px;
-border:none;
-margin-top:10px;
+/* ===================== */
+/* BARRA DO TIMER */
+/* ===================== */
 
-}
 .timer{
 
 width:60%;
+
 height:15px;
+
 background:#ffffff44;
+
 margin:10px auto;
+
 border-radius:20px;
 
 }
@@ -86,8 +117,70 @@ border-radius:20px;
 #timer-bar{
 
 height:100%;
+
 width:100%;
+
 background:#ff4757;
+
 border-radius:20px;
+
+}
+
+
+/* ===================== */
+/* RESPOSTAS */
+/* ===================== */
+
+#answers button{
+
+background:white;
+
+color:black;
+
+}
+
+
+/* ===================== */
+/* INPUT DE TEXTO */
+/* ===================== */
+
+input{
+
+padding:10px;
+
+font-size:18px;
+
+border-radius:8px;
+
+border:none;
+
+margin-top:10px;
+
+}
+
+
+/* ===================== */
+/* FEEDBACK DE RESPOSTA */
+/* ===================== */
+
+#feedback{
+
+font-size:40px;
+
+font-weight:bold;
+
+margin-top:20px;
+
+}
+
+.correct{
+
+color:#00ff88;
+
+}
+
+.wrong{
+
+color:#ff4757;
 
 }
