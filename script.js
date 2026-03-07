@@ -336,7 +336,7 @@ showFeedback(false)
 
 }
 
-},1000)
+},100)
 
 }
 
