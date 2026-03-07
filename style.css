@@ -35,7 +35,7 @@ font-weight:bold;
 
 
 /* =====================================================
-   CONTADOR DE PERGUNTAS (ex: 3 / 25)
+   CONTADOR DE PERGUNTAS 
 ===================================================== */
 
 #questionCounter{
@@ -82,7 +82,7 @@ background:#ff4d5a;
 
 /* animação suave da barra */
 
-transition:width 1s linear;
+transition:width 0.2s linear;
 
 }
 
