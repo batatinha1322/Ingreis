@@ -1,91 +1,288 @@
-/* configuração geral*/
+/* =====================================================
+   CONFIGURAÇÃO GERAL DA PÁGINA
+   define fonte, fundo e alinhamento
+===================================================== */
 
 body{
-font-family: Arial;
+font-family: Arial, sans-serif;
 text-align:center;
-background:#f5f5f5;
+margin:0;
+padding:0;
+
+/* fundo degradê azul igual ao layout antigo */
+
+background: linear-gradient(135deg,#4f7cff,#2ec4b6);
+
+color:white;
 }
+
+
+
+/* =====================================================
+   TÍTULO PRINCIPAL
+===================================================== */
 
 h1{
-color:#333;
-}
 
-#question{
-font-size:24px;
+margin-top:40px;
+
+font-size:36px;
+
 font-weight:bold;
-margin:20px;
+
 }
 
-button{
-padding:10px;
-margin:5px;
-font-size:16px;
-cursor:pointer;
+
+
+/* =====================================================
+   CONTADOR DE PERGUNTAS (ex: 3 / 25)
+===================================================== */
+
+#questionCounter{
+
+margin-top:10px;
+
+font-size:18px;
+
+opacity:0.9;
+
 }
 
-.hidden{
-display:none;
-}
 
-/* BARRA DE PROGRESSO */
+
+/* =====================================================
+   BARRA DE TEMPO
+===================================================== */
 
 #progress-container{
+
 width:80%;
-height:20px;
-background:#ddd;
-margin:auto;
-border-radius:10px;
+
+height:18px;
+
+background:rgba(255,255,255,0.3);
+
+margin:20px auto;
+
+border-radius:20px;
+
 overflow:hidden;
+
 }
 
 #progress-bar{
+
 height:100%;
+
 width:100%;
-background:#4caf50;
-transition: width 0.1s linear;
+
+/* cor vermelha estilo Kahoot */
+
+background:#ff4d5a;
+
+/* animação suave da barra */
+
+transition:width 1s linear;
+
 }
 
-/* TIMER */
+
+
+/* =====================================================
+   TIMER
+===================================================== */
 
 #timer{
+
 font-size:20px;
-margin:10px;
-}
-/* CONTADOR DE PERGUNTA */
 
-#questionCounter{
-font-size:18px;
 margin:10px;
-color:#555;
+
 }
 
-/* PONTUAÇÃO */
+
+
+/* =====================================================
+   PONTUAÇÃO
+===================================================== */
 
 #scoreBoard{
+
+margin-top:10px;
+
 font-size:20px;
+
 font-weight:bold;
-color:#2e7d32;
-margin-bottom:10px;
+
+opacity:0.9;
+
 }
 
-/* BOTÕES */
+
+
+/* =====================================================
+   PERGUNTA
+===================================================== */
+
+#question{
+
+font-size:26px;
+
+margin-top:30px;
+
+font-weight:bold;
+
+}
+
+
+
+/* =====================================================
+   ÁREA DE RESPOSTAS
+===================================================== */
+
+#answers{
+
+margin-top:20px;
+
+}
+
+
+
+/* =====================================================
+   BOTÕES DAS RESPOSTAS
+   estilo colorido tipo Kahoot
+===================================================== */
 
 button{
-background:#4caf50;
-color:white;
+
+display:inline-block;
+
+width:40%;
+
+margin:10px;
+
+padding:15px;
+
+font-size:18px;
+
 border:none;
-border-radius:6px;
-padding:10px 16px;
-font-size:16px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+color:white;
+
+/* animação suave */
+
+transition:transform 0.2s, box-shadow 0.2s;
+
 }
+
+
+
+/* =====================================================
+   CORES DIFERENTES PARA CADA BOTÃO
+===================================================== */
+
+/* vermelho */
+
+button:nth-child(1){
+
+background:#ff4d4d;
+
+}
+
+/* azul */
+
+button:nth-child(2){
+
+background:#4da6ff;
+
+}
+
+/* amarelo */
+
+button:nth-child(3){
+
+background:#ffc107;
+
+color:black;
+
+}
+
+/* verde */
+
+button:nth-child(4){
+
+background:#4caf50;
+
+}
+
+
+
+/* =====================================================
+   ANIMAÇÃO QUANDO PASSA O MOUSE
+===================================================== */
 
 button:hover{
-background:#388e3c;
+
+transform:scale(1.08);
+
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+
 }
-/* FEEDBACK */
+
+
+
+/* =====================================================
+   FEEDBACK (ACERTO / ERRO)
+===================================================== */
 
 #feedback{
+
 font-size:22px;
+
 margin:20px;
+
 font-weight:bold;
+
+}
+
+
+
+/* =====================================================
+   TELA FINAL
+===================================================== */
+
+#final{
+
+margin-top:30px;
+
+}
+
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+/* =====================================================
+   BOTÃO DE RECOMEÇAR
+===================================================== */
+
+#final button{
+
+background:white;
+
+color:black;
+
+width:200px;
+
+margin-top:20px;
+
 }
