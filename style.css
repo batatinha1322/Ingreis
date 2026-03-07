@@ -76,13 +76,9 @@ height:100%;
 
 width:100%;
 
-/* cor vermelha estilo Kahoot */
-
 background:#ff4d5a;
 
-/* animação suave da barra */
-
-transition:width 0.2s linear;
+transition:width 0.01s linear;
 
 }
 
