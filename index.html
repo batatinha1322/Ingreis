@@ -1,42 +1,100 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Simple Past Challenge</title>
+
+<!-- conecta o CSS -->
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="container">
 
+<!-- ===================== -->
+<!-- TÍTULO DO JOGO -->
+<!-- ===================== -->
+
 <h1>🎮 Simple Past Challenge</h1>
 
+
+<!-- ===================== -->
+<!-- TELA INICIAL -->
+<!-- ===================== -->
+
 <div id="start">
+
 <button onclick="startGame()">Start Game</button>
+
 </div>
+
+
+<!-- ===================== -->
+<!-- ÁREA DO JOGO -->
+<!-- ===================== -->
 
 <div id="game" class="hidden">
 
+
+<!-- barra de progresso do quiz -->
+
 <div class="progress">
+
 <div id="progress-bar"></div>
+
 </div>
 
+
+<!-- barra do tempo -->
+
 <div class="timer">
+
 <div id="timer-bar"></div>
+
 </div>
+
+
+<!-- pergunta -->
 
 <h2 id="question"></h2>
 
+
+<!-- respostas de múltipla escolha -->
+
 <div id="answers"></div>
+
+
+<!-- campo para perguntas de digitar -->
 
 <input id="text-answer" class="hidden" placeholder="Type your answer">
 
-<button id="submit-text" class="hidden" onclick="submitText()">Submit</button>
+
+<button id="submit-text" class="hidden" onclick="submitText()">
+
+Submit
+
+</button>
+
+
+<!-- feedback da resposta -->
+
+<div id="feedback" class="hidden"></div>
+
+
+<!-- pontuação -->
 
 <p id="score">Score: 0</p>
 
+
 </div>
+
+
+<!-- ===================== -->
+<!-- TELA FINAL -->
+<!-- ===================== -->
 
 <div id="end" class="hidden">
 
@@ -47,6 +105,8 @@
 </div>
 
 </div>
+
+<!-- conecta o javascript -->
 
 <script src="script.js"></script>
 
