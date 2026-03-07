@@ -1,29 +1,75 @@
 body{
+
 font-family: Arial;
-background: #4c6ef5;
-color: white;
-text-align: center;
+background: linear-gradient(135deg,#4c6ef5,#15aabf);
+color:white;
+text-align:center;
+
 }
 
 .container{
-margin-top: 100px;
+
+margin-top:60px;
+
 }
 
 button{
+
 display:block;
 margin:10px auto;
 padding:15px;
-width:200px;
+width:220px;
 font-size:18px;
 border:none;
 border-radius:10px;
 cursor:pointer;
+
 }
 
 button:hover{
-transform: scale(1.05);
+
+transform:scale(1.05);
+
 }
 
 .hidden{
+
 display:none;
+
+}
+
+.answers button{
+
+background:white;
+color:black;
+
+}
+
+.progress{
+
+width:60%;
+height:20px;
+background:#ffffff44;
+margin:20px auto;
+border-radius:20px;
+
+}
+
+#progress-bar{
+
+height:100%;
+width:0%;
+background:#00ff88;
+border-radius:20px;
+
+}
+
+input{
+
+padding:10px;
+font-size:18px;
+border-radius:8px;
+border:none;
+margin-top:10px;
+
 }
