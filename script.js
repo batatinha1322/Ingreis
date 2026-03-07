@@ -25,7 +25,7 @@ type:"multiple",
 question:"What is the past of GO?",
 answers:["goed","went","goes","gone"],
 correct:"went",
-time:15
+time:10
 },
 
 {
@@ -33,7 +33,7 @@ type:"multiple",
 question:"What is the past of EAT?",
 answers:["ate","eated","eat","eaten"],
 correct:"ate",
-time:15
+time:10
 },
 
 {
@@ -41,7 +41,7 @@ type:"multiple",
 question:"What is the past of SEE?",
 answers:["seed","saw","seen","see"],
 correct:"saw",
-time:15
+time:10
 },
 
 {
@@ -49,7 +49,7 @@ type:"multiple",
 question:"What is the past of TAKE?",
 answers:["took","taked","taken","take"],
 correct:"took",
-time:15
+time:10
 },
 
 {
@@ -57,7 +57,7 @@ type:"multiple",
 question:"What is the past of DRINK?",
 answers:["drinked","drank","drunk","drink"],
 correct:"drank",
-time:15
+time:10
 },
 
 /* VERDADEIRO OU FALSO */
@@ -66,35 +66,35 @@ time:15
 type:"truefalse",
 question:"The past of RUN is RAN",
 correct:"true",
-time:12
+time:7
 },
 
 {
 type:"truefalse",
 question:"The past of PLAY is PLAYED",
 correct:"true",
-time:12
+time:7
 },
 
 {
 type:"truefalse",
 question:"The past of SING is SINGED",
 correct:"false",
-time:12
+time:7
 },
 
 {
 type:"truefalse",
 question:"The past of WRITE is WRITED",
 correct:"false",
-time:12
+time:7
 },
 
 {
 type:"truefalse",
 question:"The past of BUY is BOUGHT",
 correct:"true",
-time:12
+time:7
 },
 
 /* ESCREVER (MAIS TEMPO) */
@@ -103,70 +103,70 @@ time:12
 type:"write",
 question:"Write the past of MAKE",
 correct:"made",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of DO",
 correct:"did",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of HAVE",
 correct:"had",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of FIND",
 correct:"found",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of THINK",
 correct:"thought",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of COME",
 correct:"came",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of GIVE",
 correct:"gave",
-time:20
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of KNOW",
 correct:"knew",
-time:20
+time17
 },
 
 {
 type:"write",
 question:"Write the past of SPEAK",
 correct:"spoke",
-time:20
+time17
 },
 
 {
 type:"write",
 question:"Write the past of DRIVE",
 correct:"drove",
-time:20
+time217
 },
 
 /* MAIS DIFÍCEIS */
@@ -176,7 +176,7 @@ type:"multiple",
 question:"What is the past of FLY?",
 answers:["flied","flew","flown","flyed"],
 correct:"flew",
-time:15
+time:10
 },
 
 {
@@ -184,28 +184,28 @@ type:"multiple",
 question:"What is the past of SWIM?",
 answers:["swam","swimmed","swum","swim"],
 correct:"swam",
-time:15
+time:10
 },
 
 {
 type:"truefalse",
 question:"The past of BREAK is BROKE",
 correct:"true",
-time:12
+time:7
 },
 
 {
 type:"truefalse",
 question:"The past of TEACH is TEACHED",
 correct:"false",
-time:12
+time:7
 },
 
 {
 type:"write",
 question:"Write the past of CHOOSE",
 correct:"chose",
-time:20
+time:17
 }
 
 ]
