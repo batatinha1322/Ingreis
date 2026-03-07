@@ -303,31 +303,31 @@ startTimer(q.time)
 
 }
 
-
-
-/* ================================
-TIMER + BARRA DE PROGRESSO
-================================ */
+/* =================================
+   TIMER DA PERGUNTA
+   controla o tempo e a barra
+================================= */
 
 function startTimer(time){
 
 clearInterval(timer)
 
-timeLeft=time
+timeLeft = time
 
-const bar=document.getElementById("progress-bar")
+const bar = document.getElementById("progress-bar")
 
-bar.style.width="100%"
-
-timer=setInterval(()=>{
+timer = setInterval(()=>{
 
 timeLeft--
 
-document.getElementById("timer").innerText="Tempo: "+timeLeft
+/* atualiza texto do tempo */
+document.getElementById("timer").innerText = "Tempo: " + timeLeft
 
-bar.style.width=(timeLeft/time*100)+"%"
+/* atualiza barra verde */
+bar.style.width = (timeLeft / time * 100) + "%"
 
-if(timeLeft<=0){
+/* quando acaba o tempo */
+if(timeLeft <= 0){
 
 clearInterval(timer)
 
@@ -338,8 +338,6 @@ showFeedback(false)
 },1000)
 
 }
-
-
 
 /* ================================
 VERIFICAR RESPOSTA
@@ -367,6 +365,10 @@ hits++
 
 showFeedback(correct)
 
+/* ATUALIZA A PONTUAÇÃO NA TELA */
+
+document.getElementById("scoreValue").innerText = score
+  
 }
 
 
