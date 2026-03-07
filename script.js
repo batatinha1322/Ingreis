@@ -230,7 +230,10 @@ const answersDiv = document.getElementById("answers")
 
 answersDiv.innerHTML=""
 
+/* ATUALIZA O CONTADOR DE PERGUNTAS */
 
+document.getElementById("currentQuestion").innerText = currentQuestion + 1
+document.getElementById("totalQuestions").innerText = questions.length
 
 /* CRIA BOTÕES PARA MULTIPLA ESCOLHA */
 
