@@ -1,168 +1,248 @@
-/* ================================= */
-/*           PERGUNTAS DO QUIZ       */
-/* ================================= */
 
-let questions=[
+/* ================================
+VARIÁVEIS PRINCIPAIS DO QUIZ
+================================ */
 
-// EASY MULTIPLE CHOICE
-
-{type:"mc",q:"Past of PLAY?",a:["playd","played","plaied","playing"],c:1,d:"easy"},
-{type:"mc",q:"Past of WALK?",a:["walked","walk","walking","walks"],c:0,d:"easy"},
-{type:"mc",q:"Past of WATCH?",a:["watch","watching","watched","watchs"],c:2,d:"easy"},
-{type:"mc",q:"Past of CLEAN?",a:["clean","cleaned","cleand","cleaning"],c:1,d:"easy"},
-{type:"mc",q:"Past of STUDY?",a:["studied","studyed","studing","study"],c:0,d:"easy"},
-{type:"mc",q:"Past of GO?",a:["goed","went","goes","going"],c:1,d:"easy"},
-{type:"mc",q:"Past of EAT?",a:["eat","eated","ate","eating"],c:2,d:"easy"},
-{type:"mc",q:"Past of DRINK?",a:["drinked","drank","drunk","drinks"],c:1,d:"easy"},
+let currentQuestion = 0
+let score = 0
+let hits = 0
+let timer
+let timeLeft
+let maxScore = 0
+let answered = false
 
 
-// TRUE / FALSE
+/* ================================
+LISTA DE 25 PERGUNTAS
+================================ */
 
-{type:"tf",q:"Played is the past of play",a:true,d:"medium"},
-{type:"tf",q:"Goed is the past of go",a:false,d:"medium"},
-{type:"tf",q:"Ate is the past of eat",a:true,d:"medium"},
-{type:"tf",q:"Drinked is correct past of drink",a:false,d:"medium"},
-{type:"tf",q:"Regular verbs usually end with -ed",a:true,d:"medium"},
+const questions = [
 
+/* MULTIPLA ESCOLHA */
 
-// MULTIPLE CHOICE MEDIUM
+{
+type:"multiple",
+question:"What is the past of GO?",
+answers:["goed","went","goes","gone"],
+correct:"went",
+time:15
+},
 
-{type:"mc",q:"Yesterday I ____ soccer",a:["play","played","plays","playing"],c:1,d:"medium"},
-{type:"mc",q:"She ____ a movie yesterday",a:["watch","watched","watching","watches"],c:1,d:"medium"},
-{type:"mc",q:"We ____ pizza yesterday",a:["eat","ate","eated","eating"],c:1,d:"medium"},
-{type:"mc",q:"They ____ to school yesterday",a:["go","went","goed","going"],c:1,d:"medium"},
-{type:"mc",q:"He ____ water after the game",a:["drink","drank","drinked","drunk"],c:1,d:"medium"},
+{
+type:"multiple",
+question:"What is the past of EAT?",
+answers:["ate","eated","eat","eaten"],
+correct:"ate",
+time:15
+},
 
+{
+type:"multiple",
+question:"What is the past of SEE?",
+answers:["seed","saw","seen","see"],
+correct:"saw",
+time:15
+},
 
-// HARD MULTIPLE CHOICE
+{
+type:"multiple",
+question:"What is the past of TAKE?",
+answers:["took","taked","taken","take"],
+correct:"took",
+time:15
+},
 
-{type:"mc",q:"Correct sentence?",a:["I goed to school yesterday","I went to school yesterday","I go to school yesterday","I going to school yesterday"],c:1,d:"hard"},
-{type:"mc",q:"Correct sentence?",a:["She eat pizza yesterday","She ate pizza yesterday","She eating pizza yesterday","She eaten pizza yesterday"],c:1,d:"hard"},
-{type:"mc",q:"Yesterday we ____ to the beach",a:["go","went","going","goes"],c:1,d:"hard"},
-{type:"mc",q:"Which is correct?",a:["They watched a movie yesterday","They watch yesterday a movie","They watching yesterday","They watches yesterday"],c:0,d:"hard"},
+{
+type:"multiple",
+question:"What is the past of DRINK?",
+answers:["drinked","drank","drunk","drink"],
+correct:"drank",
+time:15
+},
 
+/* VERDADEIRO OU FALSO */
 
-// TEXT QUESTIONS (ESCREVER)
+{
+type:"truefalse",
+question:"The past of RUN is RAN",
+correct:"true",
+time:12
+},
 
-{type:"text",q:"I ____ (visit) my grandmother yesterday",a:"visited",d:"text"},
-{type:"text",q:"She ____ (clean) her room yesterday",a:"cleaned",d:"text"},
-{type:"text",q:"They ____ (play) soccer last weekend",a:"played",d:"text"},
-{type:"text",q:"We ____ (watch) a movie last night",a:"watched",d:"text"},
-{type:"text",q:"He ____ (cook) dinner yesterday",a:"cooked",d:"text"}
+{
+type:"truefalse",
+question:"The past of PLAY is PLAYED",
+correct:"true",
+time:12
+},
+
+{
+type:"truefalse",
+question:"The past of SING is SINGED",
+correct:"false",
+time:12
+},
+
+{
+type:"truefalse",
+question:"The past of WRITE is WRITED",
+correct:"false",
+time:12
+},
+
+{
+type:"truefalse",
+question:"The past of BUY is BOUGHT",
+correct:"true",
+time:12
+},
+
+/* ESCREVER (MAIS TEMPO) */
+
+{
+type:"write",
+question:"Write the past of MAKE",
+correct:"made",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of DO",
+correct:"did",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of HAVE",
+correct:"had",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of FIND",
+correct:"found",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of THINK",
+correct:"thought",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of COME",
+correct:"came",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of GIVE",
+correct:"gave",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of KNOW",
+correct:"knew",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of SPEAK",
+correct:"spoke",
+time:20
+},
+
+{
+type:"write",
+question:"Write the past of DRIVE",
+correct:"drove",
+time:20
+},
+
+/* MAIS DIFÍCEIS */
+
+{
+type:"multiple",
+question:"What is the past of FLY?",
+answers:["flied","flew","flown","flyed"],
+correct:"flew",
+time:15
+},
+
+{
+type:"multiple",
+question:"What is the past of SWIM?",
+answers:["swam","swimmed","swum","swim"],
+correct:"swam",
+time:15
+},
+
+{
+type:"truefalse",
+question:"The past of BREAK is BROKE",
+correct:"true",
+time:12
+},
+
+{
+type:"truefalse",
+question:"The past of TEACH is TEACHED",
+correct:"false",
+time:12
+},
+
+{
+type:"write",
+question:"Write the past of CHOOSE",
+correct:"chose",
+time:20
+}
 
 ]
 
 
 
-/* ================================= */
-/*        VARIÁVEIS DO JOGO          */
-/* ================================= */
-
-let current=0
-let score=0
-let timer
-let timeLeft
-let maxTime
-let maxPoints
-
-
-
-/* ================================= */
-/*      CONFIGURAÇÃO DE TEMPO        */
-/* ================================= */
-
-function getDifficultySettings(d){
-
-if(d==="easy"){
-return {time:15,points:100}
-}
-
-if(d==="medium"){
-return {time:18,points:150}
-}
-
-if(d==="hard"){
-return {time:22,points:250}
-}
-
-if(d==="text"){
-return {time:30,points:300}
-}
-
-}
-
-
-
-/* ================================= */
-/*          INICIAR JOGO             */
-/* ================================= */
-
-function startGame(){
-
-document.getElementById("start").classList.add("hidden")
-document.getElementById("game").classList.remove("hidden")
-
-showQuestion()
-
-}
-
-
-
-/* ================================= */
-/*        MOSTRAR PERGUNTA           */
-/* ================================= */
+/* ================================
+FUNÇÃO PARA MOSTRAR PERGUNTA
+================================ */
 
 function showQuestion(){
 
-let q=questions[current]
+answered = false
 
-let settings=getDifficultySettings(q.d)
+const q = questions[currentQuestion]
 
-maxTime=settings.time
-maxPoints=settings.points
+document.getElementById("feedback").innerHTML=""
 
-timeLeft=maxTime
+document.getElementById("question").innerHTML=q.question
 
-startTimer()
-
-document.getElementById("question").innerText=(current+1)+". "+q.q
-
-let answersDiv=document.getElementById("answers")
+const answersDiv = document.getElementById("answers")
 
 answersDiv.innerHTML=""
 
-document.getElementById("text-answer").classList.add("hidden")
-document.getElementById("submit-text").classList.add("hidden")
 
 
+/* CRIA BOTÕES PARA MULTIPLA ESCOLHA */
 
-if(q.type==="mc"){
+if(q.type==="multiple"){
 
-q.a.forEach((ans,i)=>{
+q.answers.forEach(a=>{
 
-let btn=document.createElement("button")
+const btn=document.createElement("button")
 
-btn.innerText=ans
+btn.innerText=a
 
-btn.onclick=()=>answer(i===q.c)
-
-answersDiv.appendChild(btn)
-
-})
-
-}
-
-
-
-if(q.type==="tf"){
-
-["True","False"].forEach((ans,i)=>{
-
-let btn=document.createElement("button")
-
-btn.innerText=ans
-
-btn.onclick=()=>answer((i===0)===q.a)
+btn.onclick=()=>checkAnswer(a)
 
 answersDiv.appendChild(btn)
 
@@ -172,167 +252,202 @@ answersDiv.appendChild(btn)
 
 
 
-if(q.type==="text"){
+/* VERDADEIRO OU FALSO */
 
-document.getElementById("text-answer").classList.remove("hidden")
-document.getElementById("submit-text").classList.remove("hidden")
+if(q.type==="truefalse"){
+
+["true","false"].forEach(a=>{
+
+const btn=document.createElement("button")
+
+btn.innerText=a
+
+btn.onclick=()=>checkAnswer(a)
+
+answersDiv.appendChild(btn)
+
+})
 
 }
 
 
 
-updateProgress()
+/* PERGUNTA DE ESCREVER */
+
+if(q.type==="write"){
+
+const input=document.createElement("input")
+
+input.id="textAnswer"
+
+answersDiv.appendChild(input)
+
+const btn=document.createElement("button")
+
+btn.innerText="Responder"
+
+btn.onclick=()=>checkAnswer(input.value)
+
+answersDiv.appendChild(btn)
 
 }
 
 
 
-/* ================================= */
-/*            TIMER                  */
-/* ================================= */
+/* INICIA TIMER */
 
-function startTimer(){
+startTimer(q.time)
+
+}
+
+
+
+/* ================================
+TIMER + BARRA DE PROGRESSO
+================================ */
+
+function startTimer(time){
 
 clearInterval(timer)
 
+timeLeft=time
+
+const bar=document.getElementById("progress-bar")
+
+bar.style.width="100%"
+
 timer=setInterval(()=>{
 
-timeLeft-=0.1
+timeLeft--
 
-updateTimerBar()
+document.getElementById("timer").innerText="Tempo: "+timeLeft
+
+bar.style.width=(timeLeft/time*100)+"%"
 
 if(timeLeft<=0){
 
 clearInterval(timer)
 
-current++
-
-if(current>=questions.length){
-endGame()
-}else{
-showQuestion()
-}
+showFeedback(false)
 
 }
 
-},100)
+},1000)
 
 }
 
 
 
-function updateTimerBar(){
+/* ================================
+VERIFICAR RESPOSTA
+================================ */
 
-let percent=(timeLeft/maxTime)*100
+function checkAnswer(answer){
 
-document.getElementById("timer-bar").style.width=percent+"%"
+if(answered)return
 
-}
-
-
-
-/* ================================= */
-/*          CALCULAR PONTOS          */
-/* ================================= */
-
-function calculatePoints(){
-
-let percent=timeLeft/maxTime
-
-return Math.floor(maxPoints*percent)
-
-}
-
-
-
-/* ================================= */
-/*      ENVIAR RESPOSTA TEXTO        */
-/* ================================= */
-
-function submitText(){
-
-let input=document.getElementById("text-answer").value.toLowerCase()
-
-let correct=questions[current].a
-
-answer(input===correct)
-
-}
-
-
-
-/* ================================= */
-/*        RESPONDER PERGUNTA         */
-/* ================================= */
-
-function answer(correct){
+answered=true
 
 clearInterval(timer)
 
-let feedback=document.getElementById("feedback")
+const q=questions[currentQuestion]
 
-feedback.classList.remove("hidden")
+const correct=answer.toString().toLowerCase().trim()===q.correct
 
 if(correct){
 
-score+=calculatePoints()
+score+=timeLeft*10
 
-feedback.innerText="✅ Correct!"
+hits++
 
-feedback.className="correct"
+}
+
+showFeedback(correct)
+
+}
+
+
+
+/* ================================
+TELA DE ACERTO / ERRO
+================================ */
+
+function showFeedback(correct){
+
+document.getElementById("answers").innerHTML=""
+
+document.getElementById("feedback").innerHTML=
+
+correct?"✅ Correct!":"❌ Wrong! Correct: "+questions[currentQuestion].correct
+
+setTimeout(nextQuestion,2000)
+
+}
+
+
+
+/* ================================
+PRÓXIMA PERGUNTA
+================================ */
+
+function nextQuestion(){
+
+currentQuestion++
+
+if(currentQuestion>=questions.length){
+
+endQuiz()
 
 }else{
 
-feedback.innerText="❌ Wrong!"
-
-feedback.className="wrong"
+showQuestion()
 
 }
+
+}
+
+
+
+/* ================================
+TELA FINAL
+================================ */
+
+function endQuiz(){
+
+document.getElementById("question").innerHTML=""
+
+document.getElementById("answers").innerHTML=""
+
+document.getElementById("timer").innerHTML=""
+
+document.getElementById("progress-container").style.display="none"
+
+document.getElementById("final").classList.remove("hidden")
 
 document.getElementById("score").innerText="Score: "+score
 
-setTimeout(()=>{
+document.getElementById("hits").innerText="Correct answers: "+hits+" / 25"
 
-feedback.classList.add("hidden")
+document.getElementById("maxScore").innerText="Max possible score: 5000"
 
-current++
+}
 
-if(current>=questions.length){
-endGame()
-}else{
+
+
+/* ================================
+RECOMEÇAR QUIZ
+================================ */
+
+function restartQuiz(){
+
+location.reload()
+
+}
+
+
+
+/* ================================
+INICIAR QUIZ
+================================ */
+
 showQuestion()
-}
-
-},1500)
-
-}
-
-
-
-/* ================================= */
-/*       BARRA DE PROGRESSO          */
-/* ================================= */
-
-function updateProgress(){
-
-let percent=(current/questions.length)*100
-
-document.getElementById("progress-bar").style.width=percent+"%"
-
-}
-
-
-
-/* ================================= */
-/*            FINAL DO JOGO          */
-/* ================================= */
-
-function endGame(){
-
-document.getElementById("game").classList.add("hidden")
-
-document.getElementById("end").classList.remove("hidden")
-
-document.getElementById("final-score").innerText="Final Score: "+score
-
-}
