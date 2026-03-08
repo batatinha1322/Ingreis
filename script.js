@@ -367,27 +367,26 @@ TELA DE ACERTO / ERRO
 ================================ */
 
 function showFeedback(correct){
-  // Limpa os botões
   document.getElementById("answers").innerHTML = "";
-
-  // Pega a div do feedback
   const feedbackDiv = document.getElementById("feedback");
 
-  // Se o jogador acertou (correct for verdadeiro)
   if (correct === true) {
-    somAcerto.play(); // TOCA O SOM DE ACERTO
+    // Rebobina e toca o som de acerto
+    somAcerto.currentTime = 0; 
+    somAcerto.play(); 
+    
     feedbackDiv.innerHTML = "✅ Correct!";
   } 
-  // Se o jogador errou (correct for falso)
   else {
-    somErro.play(); // TOCA O SOM DE ERRO
+    // Rebobina e toca o som de erro
+    somErro.currentTime = 0; 
+    somErro.play(); 
+    
     feedbackDiv.innerHTML = "❌ Wrong! Correct: " + questions[currentQuestion].correct;
   }
 
-  // Espera 2 segundos e vai para a próxima
   setTimeout(nextQuestion, 2000);
 }
-
 /* ================================
 PRÓXIMA PERGUNTA
 ================================ */
