@@ -448,10 +448,11 @@ location.reload()
 INICIAR QUIZ (BOTÃO PLAY)
 ================================ */
 function startQuiz() {
-  // Esconde a tela inicial
-  document.getElementById("startScreen").classList.add("hidden");
+  // Força o sumiço da tela inicial (à prova de falhas)
+  document.getElementById("startScreen").style.display = "none";
   
-  // Mostra o container do quiz
+  // Força o aparecimento da tela do jogo
+  document.getElementById("quizContainer").style.display = "block";
   document.getElementById("quizContainer").classList.remove("hidden");
   
   // Carrega a primeira pergunta
