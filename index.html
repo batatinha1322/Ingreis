@@ -8,36 +8,38 @@
 
 <body>
 
+<div id="startScreen">
+<h1>Simple Past Quiz</h1>
+<button id="playBtn" onclick="startQuiz()">▶ Play</button>
+<div id="credits">Feito por Arthur Emanuel</div>
+</div>
+
+<div id="quizContainer" class="hidden">
+
 <h1>Simple Past Quiz</h1>
 
-  <!-- INDICADOR DE PERGUNTA -->
-<div id="questionCounter">
+  <div id="questionCounter">
 Pergunta <span id="currentQuestion">1</span> / <span id="totalQuestions">25</span>
 </div>
 
-<!-- BARRA DE PROGRESSO -->
 <div id="progress-container">
 <div id="progress-bar"></div>
 </div>
 
-<!-- TIMER -->
 <div id="timer">Tempo: 0</div>
 
-  <!-- PONTUAÇÃO ATUAL -->
-<div id="scoreBoard">
+  <div id="scoreBoard">
 Pontuação: <span id="scoreValue">0</span>
 </div>
 
-<!-- PERGUNTA -->
 <div id="question"></div>
 
-<!-- RESPOSTAS -->
 <div id="answers"></div>
 
-<!-- FEEDBACK -->
 <div id="feedback"></div>
 
-<!-- TELA FINAL -->
+</div>
+
 <div id="final" class="hidden">
 <h2>Fim do Quiz!</h2>
 
