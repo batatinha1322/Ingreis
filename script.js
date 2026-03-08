@@ -211,8 +211,6 @@ time:17
 
 ]
 
-
-
 /* ================================
 FUNÇÃO PARA MOSTRAR PERGUNTA
 ================================ */
@@ -254,8 +252,6 @@ answersDiv.appendChild(btn)
 
 }
 
-
-
 /* VERDADEIRO OU FALSO */
 
 if(q.type==="truefalse"){
@@ -273,8 +269,6 @@ answersDiv.appendChild(btn)
 })
 
 }
-
-
 
 /* PERGUNTA DE ESCREVER */
 
@@ -295,8 +289,6 @@ btn.onclick=()=>checkAnswer(input.value)
 answersDiv.appendChild(btn)
 
 }
-
-
 
 /* INICIA TIMER */
 
@@ -370,25 +362,31 @@ document.getElementById("scoreValue").innerText = score
   
 }
 
-
-
 /* ================================
 TELA DE ACERTO / ERRO
 ================================ */
 
 function showFeedback(correct){
+  // Limpa os botões
+  document.getElementById("answers").innerHTML = "";
 
-document.getElementById("answers").innerHTML=""
+  // Pega a div do feedback
+  const feedbackDiv = document.getElementById("feedback");
 
-document.getElementById("feedback").innerHTML=
+  // Se o jogador acertou (correct for verdadeiro)
+  if (correct === true) {
+    somAcerto.play(); // TOCA O SOM DE ACERTO
+    feedbackDiv.innerHTML = "✅ Correct!";
+  } 
+  // Se o jogador errou (correct for falso)
+  else {
+    somErro.play(); // TOCA O SOM DE ERRO
+    feedbackDiv.innerHTML = "❌ Wrong! Correct: " + questions[currentQuestion].correct;
+  }
 
-correct?"✅ Correct!":"❌ Wrong! Correct: "+questions[currentQuestion].correct
-
-setTimeout(nextQuestion,2000)
-
+  // Espera 2 segundos e vai para a próxima
+  setTimeout(nextQuestion, 2000);
 }
-
-
 
 /* ================================
 PRÓXIMA PERGUNTA
