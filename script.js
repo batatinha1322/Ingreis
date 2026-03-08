@@ -309,33 +309,32 @@ startTimer(Number(q.time))
 ================================= */
 
 function startTimer(time){
+  clearInterval(timer);
+  timeLeft = time;
 
-clearInterval(timer)
+  const bar = document.getElementById("progress-bar");
 
-timeLeft = time
+  // --- TRUQUE DO RESET RÁPIDO ---
+  bar.style.transition = "none"; // Desliga a animação
+  bar.style.width = "100%";      // Joga a barra pro começo imediatamente
 
-const bar = document.getElementById("progress-bar")
+  // Espera uma fração de segundo e liga a animação suave de novo
+  setTimeout(() => {
+    bar.style.transition = "width 1s linear";
+  }, 50);
+  // ------------------------------
 
-timer = setInterval(()=>{
+  timer = setInterval(()=>{
+    timeLeft--;
+    document.getElementById("timer").innerText = "Tempo: " + timeLeft;
+    bar.style.width = (timeLeft / time * 100) + "%";
 
-timeLeft--
-
-document.getElementById("timer").innerText = "Tempo: " + timeLeft
-
-bar.style.width = (timeLeft/time * 100) + "%"
-
-if(timeLeft <= 0){
-
-clearInterval(timer)
-   
-answered = true; 
-
-showFeedback(false)
-
-}
-
-},1000)
-
+    if(timeLeft <= 0){
+      clearInterval(timer);
+      answered = true; // (Aquela correção que eu tinha feito antes)
+      showFeedback(false);
+    }
+  }, 1000);
 }
 
 /* ================================
