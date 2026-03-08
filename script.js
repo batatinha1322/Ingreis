@@ -2,7 +2,8 @@
 /* ================================
 VARIÁVEIS PRINCIPAIS DO QUIZ
 ================================ */
-
+const somAcerto = new Audio('acerto.mp3');
+const somErro = new Audio('erro.mp3');
 let currentQuestion = 0
 let score = 0
 let hits = 0
