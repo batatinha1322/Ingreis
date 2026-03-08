@@ -152,21 +152,21 @@ time:17
 type:"write",
 question:"Write the past of KNOW",
 correct:"knew",
-time17
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of SPEAK",
 correct:"spoke",
-time17
+time:17
 },
 
 {
 type:"write",
 question:"Write the past of DRIVE",
 correct:"drove",
-time217
+time:17
 },
 
 /* MAIS DIFÍCEIS */
@@ -327,6 +327,8 @@ bar.style.width = (timeLeft/time * 100) + "%"
 if(timeLeft <= 0){
 
 clearInterval(timer)
+   
+answered = true; 
 
 showFeedback(false)
 
@@ -345,7 +347,6 @@ function checkAnswer(answer){
 if(answered)return
 
 answered=true
-showFeedback(false)
    
 clearInterval(timer)
 
