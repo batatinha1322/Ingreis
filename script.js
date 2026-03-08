@@ -310,7 +310,6 @@ startTimer(Number(q.time))
 
 function startTimer(time){
 
-timer = null
 clearInterval(timer)
 
 timeLeft = time
@@ -321,13 +320,10 @@ timer = setInterval(()=>{
 
 timeLeft--
 
-/* atualiza texto do tempo */
 document.getElementById("timer").innerText = "Tempo: " + timeLeft
 
-/* atualiza barra verde */
-bar.style.width = (timeLeft / time * 100) + "%"
+bar.style.width = (timeLeft/time * 100) + "%"
 
-/* quando acaba o tempo */
 if(timeLeft <= 0){
 
 clearInterval(timer)
@@ -337,7 +333,7 @@ showFeedback(false)
 }
 
 },1000)
- 
+
 }
 
 /* ================================
@@ -349,7 +345,8 @@ function checkAnswer(answer){
 if(answered)return
 
 answered=true
-
+showFeedback(false)
+   
 clearInterval(timer)
 
 const q=questions[currentQuestion]
