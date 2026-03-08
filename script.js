@@ -444,11 +444,16 @@ function restartQuiz(){
 location.reload()
 
 }
-
-
-
 /* ================================
-INICIAR QUIZ
+INICIAR QUIZ (BOTÃO PLAY)
 ================================ */
-
-showQuestion()
+function startQuiz() {
+  // Esconde a tela inicial
+  document.getElementById("startScreen").classList.add("hidden");
+  
+  // Mostra o container do quiz
+  document.getElementById("quizContainer").classList.remove("hidden");
+  
+  // Carrega a primeira pergunta
+  showQuestion();
+}
